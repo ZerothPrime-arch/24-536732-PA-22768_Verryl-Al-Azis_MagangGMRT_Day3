@@ -1,0 +1,19 @@
+a. Apakah perbedaan open-loop system dan close-loop system?
+Open loop bekerja tanpa adanya feedback dan system ini hanya menerima input, menjalankan proses yang diberi serta menghasilkan output.
+Sedangkan close loop bekerja dengan mengandalkan feedback dari sensor untuk membandingkan antara output asli dengan input yang diinginkan user serta mengoptimalisasi dirinya untuk mengurangi error.
+b. Apakah sistem yang anda kerjakan dan simulasikan di atas termasuk open-loop system atau close-loop system? Justifikasi jawaban anda!
+Sistem yang saya buat menggunakan close loop dikarenakan ia bergantung pada feedback dari PIR sensor dan MPU sensor untuk membaca roll pitch yaw serta memberi feedback tentang kondisi sekitarnya.
+c. Jelaskan fungsi masing-masing sensor yang digunakan pada sistem di atas!
+> MPU6050 : digunakan untuk mengukur orientasi dari akselerasi linear dan kecepatan rotasi dari roll, pitch dan yaw.
+> PIR : untuk mendeteksi gerakan dari tiap objek yang memancarkan panas (Makhluk hidup, dll).
+d. Jelaskan alasan, fungsi, dan arah tuju koneksi setiap pin ESP32 yang
+dimanfaatkan dari skematik (poin 5 Informasi Pengerjaan) yang telah anda buat!
+> Pin 21 & 22 (MPU6050): digunakan untuk berkomunikasi dengan protocol I2C, berfungsi untuk mengirim dan menerima data, serta arah tujunya layaknya feedback dari esp menuju mpu dan sebaliknya.
+> Pin 25 (PIR): digunakan untuk membaca sinyal digital, berfungsi sebagai input untuk membaca sinyal binary dan merupakan arah input (dari pir menuju esp).
+> Pin 13,14,26,27,32 (Servo): pin ini mampu menghasilkan PWM dan digunakan sebagai output dari esp32 (dari esp32 menuju servo).
+> Pin 2(LED): pin ini adalah GPIO standar dan digunakan sebagai output dari esp32 untuk LED (esp32 menuju led).
+e. Dalam suatu rapat monitoring, anda diminta untuk menjelaskan kode yang anda
+buat ke rekan kerja tim anda yang berbeda divisi dengan anda. Buatlah penjelasan
+yang mudah dipahami untuk menjelaskan alur bagaimana sistem yang anda
+program bekerja berdasarkan eksekusi kode yang telah dibuat hingga ke eksekusi
+yang dilakukan oleh mikrokontroler, sensor, dan aktuator yang ada!
